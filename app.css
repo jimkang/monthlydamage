@@ -36,28 +36,6 @@ body {
   border-style: none;  
 }
 
-.hidden {
-  opacity: 0;
-}
-
-.revealed {
-  opacity: 1;
-  transition: opacity 0.3s;
-}
-
-.non-existent {
-  display: none;
-}
-
-.existent {
-  display: block;
-}
-
-#title {
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
 .root {
   padding-left: 0;
   width: 100%;
