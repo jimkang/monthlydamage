@@ -62,14 +62,8 @@ body {
   padding: 0.5em;
 }
 
-:not(#header-row).row:nth-of-type(2n+1) {
+.row:nth-of-type(2n+1) {
   background-color: hsla(0, 0%, 80%, 0.5);
-}
-
-#header-row {
-  -webkit-align-items: flex-end;
-  -ms-flex-align: end;
-  align-items: flex-end;
 }
 
 .name-column {
@@ -80,58 +74,6 @@ body {
   -webkit-order: 3;
   -ms-flex-order: 3;
   order: 3;
-}
-
-.hit-dice-column {
-  -webkit-flex: 0 0 5.5em;
-  -ms-flex: 0 0 5.5em;
-  flex: 0 0 5.5em;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-  padding-right: 1em;
-  text-align: center;
-}
-
-.level-number-column {
-  -webkit-flex: 0 0 5.5em;
-  -ms-flex: 0 0 5.5em;
-  flex: 0 0 5.5em;
-  -webkit-order: 1;
-  -ms-flex-order: 1;
-  order: 1;
-  padding-right: 1em;
-  text-align: center;
-}
-
-.xp-low-end-column {
-  -webkit-flex: 0 0 5.5em;
-  -ms-flex: 0 0 5.5em;
-  flex: 0 0 5.5em;
-  -webkit-order: 4;
-  -ms-flex-order: 4;
-  order: 4;
-  padding-right: 0.2em;
-  text-align: right;
-  font-size: smaller;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
-}
-
-.xp-range-divider-column {
-  -webkit-flex: 0 0 0.6em;
-  -ms-flex: 0 0 0.6em;
-  flex: 0 0 0.6em;
-  -webkit-order: 5;
-  -ms-flex-order: 5;
-  order: 5;
-  padding: 0;
-  text-align: center;
-  font-size: smaller;
-  -webkit-align-self: center;
-  -ms-flex-item-align: center;
-  align-self: center;
 }
 
 .xp-high-end-column {
@@ -149,95 +91,11 @@ body {
   align-self: center;
 }
 
-.xp-column-title {
-  -webkit-flex: 0 0 11.6em;
-  -ms-flex: 0 0 11.6em;
-  flex: 0 0 11.6em;
-  -webkit-order: 4;
-  -ms-flex-order: 4;
-  order: 4;
-  text-align: center;
-}
-
-.column-header {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  padding-bottom: 1em;
-}
-
-.column-header span {
-  font-weight: bold;
-}
-
-.centered-text {
-  text-align: center;
-}
-
-.fade-out {
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-
-.transparent {
-  opacity: 0;
-}
-
-.full-header-text {
-  display: inherit;
-}
-
-.short-header-text {
-  display: none;
-}
-
 .notification {
   padding: 1em;
   border-radius: 0.5em;
   margin-bottom: 1.5em;
   max-width: 610px;
-}
-
-.form {
-  color: white;
-  padding: 1em;
-  border-radius: 0.5em;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 2em;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.form input {
-  width: 16em;
-  border-radius: 1em;
-  height: 2em;
-  padding: 0.25em;
-  font-size: 1.1em;
-  text-align: center;
-  background-color: hsl(0, 0%, 92%);
-}
-
-.button {
-  background-color: hsla(0, 0%, 0%, 0.22);
-  padding: 0.6em;
-  padding-left: 0.8em;
-  border-radius: 1.7em;
-  height: 1.8em;
-  font-size: 1.15em;
-  line-height: 1.8em;
-  width: 1.8em;
-  margin-top: 0.8em;
-  cursor: pointer;
 }
 
 .credits {
@@ -283,60 +141,6 @@ a {
   background-color: white;
 }
 
-@media all and (max-width: 586px) {
-  body {
-    margin: 0;
-  }
-
-  .book-page {
-    padding-left: 2em;
-    padding-top: 0;
-  }
-
-  #title {
-    margin-top: 0.2em;
-  }
-
-  .column-header {
-    max-height: 2em;
-    min-height: 2em;
-  }
-
-  .level-number-column .column-header {
-    opacity: 0;
-  }
-
-  .level-number-column {
-    -webkit-flex: 0 1 2em;
-    -ms-flex: 0 1 2em;
-    flex: 0 1 2em;
-  }
-
-  .full-header-text {
-    display: none;
-  }
-
-  .short-header-text {
-    display: inherit;
-  }
-
-  .xp-column-title {
-    display: none;
-  }
-
-  .xp-low-end-column {
-    display: none;
-  }
-
-  .xp-range-divider-column {
-    display: none;
-  }
-
-  .xp-high-end-column {
-    display: none;
-  }
-}
-
 #entry-form li {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -347,20 +151,22 @@ a {
   flex-direction: row;
 }
 
-
 #entry-form li input {
   -webkit-flex: 2 0 12em;
   -ms-flex: 2 0 12em;
   flex: 2 0 12em;
 }
 
-@media all and (max-width: 480px) {
-  .column-header {
-    max-height: 1em;
-    min-height: 1em;
+@media all and (max-width: 586px) {
+  body {
+    margin: 0;
   }
 
-  .hit-dice-column {
-    display: none;
+  .book-page {
+    padding-left: 2em;
+    padding-top: 0;
   }
+}
+
+@media all and (max-width: 480px) {
 }
