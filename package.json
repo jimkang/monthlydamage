@@ -1,0 +1,32 @@
+{
+  "name": "monthlydamage",
+  "version": "1.0.0",
+  "description": "A web app that gives you the monthly cost of a house.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jimkang/monthlydamage.git"
+  },
+  "keywords": [],
+  "author": "Jim Kang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimkang/monthlydamage/issues"
+  },
+  "homepage": "https://github.com/jimkang/monthlydamage",
+  "devDependencies": {
+    "tape": "^3.0.3"
+  },
+  "dependencies": {
+    "browserify": "^8.1.3",
+    "d3-selection": "^0.4.8",
+    "idmaker": "^0.1.1",
+    "lodash.debounce": "^3.1.1",
+    "monthly-damage": "^1.0.0",
+    "probable": "^1.7.0",
+    "uglify-js": "^2.4.17"
+  }
+}

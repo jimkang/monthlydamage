@@ -1,0 +1,388 @@
+body {
+  font-family: futura, 'helvetica neue', 'sans-serif';
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: hsl(0, 0%, 30%);
+  margin: 1em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.book-page {
+  background-color: hsl(35, 10%, 93%);
+  width: 100%;
+  max-width: 640px;
+  box-shadow: 4px 4px hsla(30, 30%, 30%, 0.3);
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;  
+  margin-bottom: 2em;
+}
+
+.book-page input {
+  border-radius: 1.0em;
+  height: 2em;
+  text-align: center;
+  border-style: none;  
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.revealed {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.non-existent {
+  display: none;
+}
+
+.existent {
+  display: block;
+}
+
+#title {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.root {
+  padding-left: 0;
+  width: 100%;
+}
+
+.level-table {
+  text-shadow: hsla(0, 0%, 100%, 0.3) 1px 1px;
+  font-size: 1.25em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.row {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+
+  padding: 0.5em;
+}
+
+:not(#header-row).row:nth-of-type(2n+1) {
+  background-color: hsla(0, 0%, 80%, 0.5);
+}
+
+#header-row {
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.name-column {
+  -webkit-flex: 2 0 12em;
+  -ms-flex: 2 0 12em;
+  flex: 2 0 12em;
+  min-width: 200px;
+  -webkit-order: 3;
+  -ms-flex-order: 3;
+  order: 3;
+}
+
+.hit-dice-column {
+  -webkit-flex: 0 0 5.5em;
+  -ms-flex: 0 0 5.5em;
+  flex: 0 0 5.5em;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+  padding-right: 1em;
+  text-align: center;
+}
+
+.level-number-column {
+  -webkit-flex: 0 0 5.5em;
+  -ms-flex: 0 0 5.5em;
+  flex: 0 0 5.5em;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  padding-right: 1em;
+  text-align: center;
+}
+
+.xp-low-end-column {
+  -webkit-flex: 0 0 5.5em;
+  -ms-flex: 0 0 5.5em;
+  flex: 0 0 5.5em;
+  -webkit-order: 4;
+  -ms-flex-order: 4;
+  order: 4;
+  padding-right: 0.2em;
+  text-align: right;
+  font-size: smaller;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.xp-range-divider-column {
+  -webkit-flex: 0 0 0.6em;
+  -ms-flex: 0 0 0.6em;
+  flex: 0 0 0.6em;
+  -webkit-order: 5;
+  -ms-flex-order: 5;
+  order: 5;
+  padding: 0;
+  text-align: center;
+  font-size: smaller;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.xp-high-end-column {
+  -webkit-flex: 0 0 5.5em;
+  -ms-flex: 0 0 5.5em;
+  flex: 0 0 5.5em;
+  -webkit-order: 6;
+  -ms-flex-order: 6;
+  order: 6;
+  padding-left: 0.2em;
+  text-align: left;
+  font-size: smaller;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+
+.xp-column-title {
+  -webkit-flex: 0 0 11.6em;
+  -ms-flex: 0 0 11.6em;
+  flex: 0 0 11.6em;
+  -webkit-order: 4;
+  -ms-flex-order: 4;
+  order: 4;
+  text-align: center;
+}
+
+.column-header {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 1em;
+}
+
+.column-header span {
+  font-weight: bold;
+}
+
+.centered-text {
+  text-align: center;
+}
+
+.fade-out {
+  transition: opacity 0.5s;
+  opacity: 0;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+.full-header-text {
+  display: inherit;
+}
+
+.short-header-text {
+  display: none;
+}
+
+.notification {
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-bottom: 1.5em;
+  max-width: 610px;
+}
+
+.form {
+  color: white;
+  padding: 1em;
+  border-radius: 0.5em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 2em;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.form input {
+  width: 16em;
+  border-radius: 1em;
+  height: 2em;
+  padding: 0.25em;
+  font-size: 1.1em;
+  text-align: center;
+  background-color: hsl(0, 0%, 92%);
+}
+
+.button {
+  background-color: hsla(0, 0%, 0%, 0.22);
+  padding: 0.6em;
+  padding-left: 0.8em;
+  border-radius: 1.7em;
+  height: 1.8em;
+  font-size: 1.15em;
+  line-height: 1.8em;
+  width: 1.8em;
+  margin-top: 0.8em;
+  cursor: pointer;
+}
+
+.credits {
+  font-size: smaller;
+  color: hsla(0, 0%, 100%, 0.9);
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+a {
+  text-decoration: none;
+}
+
+a {
+  font-weight: bold;
+  background-color: hsla(0, 0%, 0%, 0.2);
+  color: #fff;
+  padding: 0.2em;
+  border-radius: 0.5em;
+}
+
+#result-page {
+  background-color: #fff;
+}
+
+#result-page .level-table {
+  background-color: #fff;
+}
+
+#result-page .label {
+  font-size: larger;
+}
+
+#result-page .value {
+  font-size: x-large;
+}
+
+#result-page #monthly-cost {
+  background-color: yellow;
+}
+
+#result-page #total-loan-cost {
+  background-color: white;
+}
+
+@media all and (max-width: 586px) {
+  body {
+    margin: 0;
+  }
+
+  .book-page {
+    padding-left: 2em;
+    padding-top: 0;
+  }
+
+  #title {
+    margin-top: 0.2em;
+  }
+
+  .column-header {
+    max-height: 2em;
+    min-height: 2em;
+  }
+
+  .level-number-column .column-header {
+    opacity: 0;
+  }
+
+  .level-number-column {
+    -webkit-flex: 0 1 2em;
+    -ms-flex: 0 1 2em;
+    flex: 0 1 2em;
+  }
+
+  .full-header-text {
+    display: none;
+  }
+
+  .short-header-text {
+    display: inherit;
+  }
+
+  .xp-column-title {
+    display: none;
+  }
+
+  .xp-low-end-column {
+    display: none;
+  }
+
+  .xp-range-divider-column {
+    display: none;
+  }
+
+  .xp-high-end-column {
+    display: none;
+  }
+}
+
+#entry-form li {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+
+#entry-form li input {
+  -webkit-flex: 2 0 12em;
+  -ms-flex: 2 0 12em;
+  flex: 2 0 12em;
+}
+
+@media all and (max-width: 480px) {
+  .column-header {
+    max-height: 1em;
+    min-height: 1em;
+  }
+
+  .hit-dice-column {
+    display: none;
+  }
+}

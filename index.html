@@ -1,0 +1,56 @@
+<html>
+<head>
+  <title>Monthly Damage</title>
+  <link rel="stylesheet" href="app.css"></link>
+</head>
+<body>
+
+<section id="entry-form" class="book-page">
+  <ul class="root level-table">
+    <li class="row">
+      <div class="name-column">House price:</div>
+      <input id="price" class="xp-high-end-column" type="number" value="0"></input>
+    </li>
+    <li class="row">
+      <div class="name-column">Down payment (in dollars):</div>
+      <input id="downPayment" class="xp-high-end-column" type="number" value="0"></input>
+    </li>
+    <li class="row">
+      <div class="name-column">Interest rate:</div>
+      <input id="interestRatePercent" class="xp-high-end-column" type="number" value="4.125"></input>
+    </li>
+    <li class="row">
+      <div class="name-column">Term (in years):</div>
+      <input id="termInYears" class="xp-high-end-column" type="number" value="30"></input>
+    </li>
+    <li class="row">
+      <div class="name-column">Monthly assessment (condo fees):</div>
+      <input id="monthlyCondoFee" class="xp-high-end-column" type="number" value="0"></input>
+    </li>
+    <li class="row">
+      <div class="name-column">Yearly taxes:</div>
+      <input id="yearlyTaxes" class="xp-high-end-column" type="number" value="0"></input>
+    </li>
+  </ul>
+</section>
+
+<section id="result-page" class="book-page">
+  <ul id="result-root" class="root level-table">
+    <li class="row" id="monthly-cost">
+      <div class="label name-column">Total monthly cost:</div>
+      <div id="monthly-cost-value" class="value xp-high-end-column">Unknown</div>
+    </li>
+    <li class="row" id="total-loan-cost">
+      <div class="label name-column">Total cost of loan:</div>
+      <div id="total-loan-cost-value" class="value xp-high-end-column">Unknown</div>
+    </li>  
+  </ul>
+</section>
+
+<script src="index.js"></script>
+<!--
+<script src="monthlydamage.js"></script>
+-->
+
+</body>
+</html>
