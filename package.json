@@ -1,7 +1,7 @@
 {
   "name": "monthlydamage",
   "version": "1.0.0",
-  "description": "A web app that gives you the monthly cost of a house.",
+  "description": "A web app that gives you the total monthly cost of a house.",
   "main": "index.js",
   "scripts": {
     "test": "make test"
