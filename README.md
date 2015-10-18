@@ -3,6 +3,8 @@ monthlydamage
 
 A [web app](http://jimkang.com/monthlydamage) that gives you the monthly cost of a house. Not to be confused with the [Node module](https://github.com/jimkang/monthly-damage) it uses to do the calculating.
 
+CC0 background images courtesy of [Pixabay](https://pixabay.com/).
+
 Installation
 ------------
 
