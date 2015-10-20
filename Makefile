@@ -5,11 +5,11 @@ test:
 	node tests/basictests.js
 
 run:
-	wzrd index.js -- \
+	wzrd app.js:index.js -- \
 		-d
 
 build:
-	$(BROWSERIFY) index.js | $(UGLIFY) -c -m -o monthlydamage.js
+	$(BROWSERIFY) app.js | $(UGLIFY) -c -m -o index.js
 
 pushall:
 	git push origin master && git push origin gh-pages
