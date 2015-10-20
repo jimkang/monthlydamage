@@ -188,4 +188,24 @@ a {
 }
 
 @media all and (max-width: 480px) {
+  .level-table {
+    text-shadow: hsla(0, 0%, 100%, 0.3) 1px 1px;
+    font-size: 1em;
+  }
+
+  .book-page {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .name-column {
+    padding-bottom: 0.5em;
+  }
+
+  .hidden {
+    padding: 0;
+  }
 }
