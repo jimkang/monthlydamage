@@ -156,6 +156,11 @@ a {
   height: 0;
 }
 
+.fade {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
 .revealed {
   height: inherit;
   opacity: 1;
