@@ -15,7 +15,7 @@ var copyLink = d3.select('#copy-results-link');
 var copyField = d3.select('#copy-results-field');
 var notificationRow = d3.select('#notification-row');
 
-var clipboard = new Clipboard('#copy-results-link');
+new Clipboard('#copy-results-link');
 
 ((function setUp() {
   document.body.style.backgroundImage = 'url(' + pickBackground() + ')';
