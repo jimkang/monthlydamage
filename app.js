@@ -93,7 +93,7 @@ function getSummaryText(formOpts, damage, lineBreak) {
 
   return 'Total monthly cost: ' +
     damage.monthlyCost.toLocaleString(formatOpts) + lineBreak +
-    'Total cost of loan: ' +
+    'Total interest: ' +
     damage.totalCostOfLoan.toLocaleString(formatOpts) + lineBreak +
     lineBreak +
     'House price: ' + formOpts.price + lineBreak +
