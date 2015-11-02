@@ -2,12 +2,20 @@ var pickBackground = require('./pick-background');
 var d3 = require('d3-selection');
 var debounce = require('lodash.debounce');
 var monthlyDamage = require('monthly-damage');
+var Clipboard = require('clipboard');
 
 var formElementsById = {};
 var monthlyCostEl = d3.select('#monthly-cost-value');
 var totalLoanCostEl = d3.select('#total-loan-cost-value');
+
 var mailRow = d3.select('#mail-results');
 var mailLink = d3.select('#mail-results-link');
+var copyRow = d3.select('#copy-results');
+var copyLink = d3.select('#copy-results-link');
+var copyFieldRow = d3.select('#copy-results-field-container');
+var copyField = d3.select('#copy-results-field');
+
+var clipboard = new Clipboard('#copy-results-link');
 
 ((function setUp() {
   document.body.style.backgroundImage = 'url(' + pickBackground() + ')';
@@ -50,6 +58,12 @@ function recalculate() {
 
     mailRow.class('revealed', true).class('hidden', false);
     mailLink.attr('href', getMailToLink(opts, damage));
+
+    copyRow.class('revealed', true).class('hidden', false);
+
+    // Update the copy field, but hide it. It's just there to be copied to 
+    // the clipboard.
+    copyField.html(getSummaryText(opts, damage, '<br />'));
   }
   else {
     monthlyCostEl.text('Unknown');
@@ -57,22 +71,33 @@ function recalculate() {
 
     mailRow.class('revealed', false).class('hidden', true);
     mailLink.attr('href', '');
+
+    copyRow.class('revealed', false).class('hidden', true);
+    copyField.html('');
   }
 }
 
 function getMailToLink(formOpts, damage) {
-  var body = 'Total monthly cost: ' +
-    damage.monthlyCost.toLocaleString(formatOpts) + '\n' +
-    'Total cost of loan: ' +
-    damage.totalCostOfLoan.toLocaleString(formatOpts) + '\n' +
-    '\n' +
-    'House price: ' + formOpts.price + '\n' +
-    'Down payent: ' + formOpts.downPayment + '\n' +
-    'Interest rate: ' + formOpts.interestRatePercent + '\n' +
-    'Term (in years): ' + formOpts.termInYears + '\n' +
-    'Monthly assessment (condo fees): ' + formOpts.monthlyCondoFee +  '\n' +
-    'Yearly taxes: ' + formOpts.yearlyTaxes + '\n';
+  var body = getSummaryText(formOpts, damage);
 
   return 'mailto:?subject=' + encodeURIComponent('Monthly house cost') + '&' +
     'body=' + encodeURIComponent(body);
+}
+
+function getSummaryText(formOpts, damage, lineBreak) {
+  if (!lineBreak) {
+    lineBreak = '\n';
+  }
+
+  return 'Total monthly cost: ' +
+    damage.monthlyCost.toLocaleString(formatOpts) + lineBreak +
+    'Total cost of loan: ' +
+    damage.totalCostOfLoan.toLocaleString(formatOpts) + lineBreak +
+    lineBreak +
+    'House price: ' + formOpts.price + lineBreak +
+    'Down payent: ' + formOpts.downPayment + lineBreak +
+    'Interest rate: ' + formOpts.interestRatePercent + lineBreak +
+    'Term (in years): ' + formOpts.termInYears + lineBreak +
+    'Monthly assessment (condo fees): ' + formOpts.monthlyCondoFee +  lineBreak +
+    'Yearly taxes: ' + formOpts.yearlyTaxes + lineBreak;  
 }

@@ -45,9 +45,17 @@
       <div class="label name-column">Total interest:</div>
       <div id="total-loan-cost-value" class="value xp-high-end-column">Unknown</div>
     </li>
-    <li class="row hidden" id="mail-results">
-      <a id="mail-results-link">Mail these results.</a>
-    </li>    
+
+    <li class="row hidden report-results-container" id="mail-results">
+      <a id="mail-results-link" class="report-results-button">Mail these results.</a>
+    </li>
+    <li class="row hidden report-results-container" id="copy-results">
+      <a id="copy-results-link" class="report-results-button" 
+      data-clipboard-target="#copy-results-field">Copy these results.</a>
+    </li>
+    <li class="row hidden report-results-container" id="copy-results-field-container">
+      <div id="copy-results-field"></div>
+    </li>
   </ul>
 </section>
 
